@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browsecure</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        html, body {
+  height: 100%;
+}
+
+
+        .red-text {
+            color: red;
+        }
+
+        .green-text {
+            color: green;
+        }
+
+        body {
+    min-width: 500px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    width: 0; 
+}
+        .container {
+            width: 100%; 
+            max-width: none;
+        }
+
+        .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.logo img {
+  width: 120px;
+  height: auto; 
+}
+
+.heading {
+  margin-bottom: 5px;
+}
+
+
+.description {
+  font-style: italic;
+  color: #888;
+}
+
+
+
+</style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+          <img src="logo.png" alt="logo">
+        </div>
+        <div class="heading">
+          <h2>
+            <span class="logo-text">Brow<span style="color:#3D5CCA">SE</span>cure</span>
+          </h2>
+        </div>
+        <div class="description">
+          <span>Browser extension for secure browsing</span>
+        </div>
+      </div>
+      
+      
+    <div class="container py-2">            
+            <div class="form-group">
+            <label for="url-input">URL:</label>
+            <input type="text" class="form-control" id="url-input" placeholder="Enter the URL">
+        </div>
+        <button class="btn" id="check-button" style="background-color:#3D5CCA;color:white">Check URL</button>
+        <div class="mt-4">
+            <div id="status" class="font-weight-bold">Waiting for URL...</div>
+        </div>
+        <div class="mt-4">
+            <form id="comment-form" action="/submit" method="post">
+                <div class="form-group">
+                    <label for="comment-input">Report Malicious Link:</label>
+                    <textarea class="form-control" id="comment-input" rows="3" placeholder="Enter the URL of the malicious link and provide a reason"></textarea>
+                    </div>
+                <button type="submit" class="btn" style="background-color:#3D5CCA;color:white">Report</button>
+            </form>
+            <div id="acknowledge" class="mt-4">
+                
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
